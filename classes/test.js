@@ -4,8 +4,9 @@ const client = require('./client');
 const service = require('./service');
 
 
-describe('Functions test', ()=> {
+describe('Classes test', ()=> {
     it('should return mocked result', ()=> {
+        assert.equal(client(), 'realResult');
         sinon.stub(service, 'do', ()=>'mockedResult');
         assert.equal(client(), 'mockedResult');
     });
